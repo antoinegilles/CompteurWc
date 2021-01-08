@@ -10,11 +10,11 @@
       <transition name="fade">
         <div @click="run" v-if="validate == false">
           <div class="mouches">
-            <img class="mouche" src="./assets/mouche.png" alt="" />
-            <img class="mouche2" src="./assets/mouche.png" alt="" />
+            <img class="mouche" src="./components/mouche.png" alt="" />
+            <img class="mouche2" src="./components/mouche.png" alt="" />
           </div>
           <p class="poop">
-            <img class="crotte" src="./assets/crotte.png" />
+            <img class="crotte" src="./components/crotte.png" />
           </p>
         </div>
       </transition>
@@ -42,7 +42,7 @@ export default {
   methods:{
     run(){
       this.validate = true
-      const audio = new Audio(require('./assets/pet.mp3'))
+      const audio = new Audio(require('./components/pet.mp3'))
       audio.play()
     }
   }

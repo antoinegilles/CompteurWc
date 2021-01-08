@@ -1,8 +1,10 @@
 <template>
   <div class="hello">
-    <h1>Combien de temps as tu passés aux toilettes dans ta vie ?</h1>
+    <h1 class="titre">
+      Combien de temps as tu passés aux toilettes dans ta vie ?
+    </h1>
 
-    <v-form class="formulaire" ref="form" v-model="valid" lazy-validation>
+    <v-form class="formulaire" ref="form" lazy-validation>
       <v-text-field
         v-model="tmpsPipi"
         label="Temps passé pour les PETITS besoins (mn) ?"
@@ -82,9 +84,7 @@
 
     <v-dialog v-model="dialog" width="500">
       <v-card>
-        <v-card-title class="headline grey lighten-2">
-          Résultats
-        </v-card-title>
+        <v-card-title class="headline grey lighten-2"> Résultats </v-card-title>
 
         <v-card-text>
           <div v-if="reset">
@@ -161,9 +161,9 @@ export default {
       ) {
         alert("les données ne peuvent être nulle !");
       } else {
-        const audio = new Audio(require('../assets/chassedo.mp3'))
-        audio.play()
-        this.dialog = true
+        const audio = new Audio(require("./chassedo.mp3"));
+        audio.play();
+        this.dialog = true;
         let calcul =
           (this.jrsPipi * this.tmpsPipi + this.jrsCaca * this.tmpsCaca) *
           (this.age * 365);
@@ -182,13 +182,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+.titre {
+  font-family: "Indie Flower", cursive;
+  padding-top: 1em;
+}
 .result {
   color: rgb(139, 37, 37);
 }
 .formulaire {
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 4em;
+  padding-top: 1em;
 }
 .hello {
   text-align: center;
