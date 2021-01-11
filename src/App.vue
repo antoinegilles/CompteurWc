@@ -28,6 +28,7 @@
 
 <script>
 import Poop from "./components/Poop";
+import axios from "axios";
 
 export default {
   name: "App",
@@ -39,13 +40,23 @@ export default {
   data: () => ({
     validate: false,
   }),
-  methods:{
-    run(){
-      this.validate = true
-      const audio = new Audio(require('./components/pet.mp3'))
-      audio.play()
-    }
-  }
+  methods: {
+    run() {
+      this.validate = true;
+      const audio = new Audio(require("./components/pet.mp3"));
+      audio.play();
+    },
+  },
+  created() {
+    axios
+      .post("https://antoinegilles.com:3100/visitor/poop")
+      .then(function () {
+        // console.log(response);
+      })
+      .catch(function () {
+        // console.log(error);
+      });
+  },
 };
 </script>
 <style scoped>

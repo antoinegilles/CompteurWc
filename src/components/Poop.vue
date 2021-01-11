@@ -191,8 +191,8 @@ export default {
   color: rgb(139, 37, 37);
 }
 .formulaire {
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
   padding-top: 1em;
 }
 .hello {
